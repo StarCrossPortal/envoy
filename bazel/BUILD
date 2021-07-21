@@ -417,6 +417,11 @@ config_setting(
 )
 
 config_setting(
+    name = "wasm_wasmer",
+    values = {"define": "wasm=wasmer"},
+)
+
+config_setting(
     name = "wasm_none",
     values = {"define": "wasm=disabled"},
 )

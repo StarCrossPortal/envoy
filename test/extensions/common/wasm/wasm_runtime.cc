@@ -25,6 +25,9 @@ std::vector<std::string> sandboxRuntimes() {
 #if defined(PROXY_WASM_HAS_RUNTIME_WASMTIME)
   runtimes.push_back("wasmtime");
 #endif
+#if defined(PROXY_WASM_HAS_RUNTIME_WASMER)
+  runtimes.push_back("wasmer");
+#endif
   return runtimes;
 }
 

@@ -62,6 +62,7 @@ def envoy_select_wasm_v8(xs):
     return select({
         "@envoy//bazel:wasm_wamr": [],
         "@envoy//bazel:wasm_wasmtime": [],
+        "@envoy//bazel:wasm_wasmer": [],
         "@envoy//bazel:wasm_wavm": [],
         "@envoy//bazel:wasm_none": [],
         "//conditions:default": xs,
@@ -85,5 +86,12 @@ def envoy_select_wasm_wavm(xs):
 def envoy_select_wasm_wasmtime(xs):
     return select({
         "@envoy//bazel:wasm_wasmtime": xs,
+        "//conditions:default": [],
+    })
+
+# Selects the given values depending on the Wasm runtimes enabled in the current build.
+def envoy_select_wasm_wasmer(xs):
+    return select({
+        "@envoy//bazel:wasm_wasmer": xs,
         "//conditions:default": [],
     })

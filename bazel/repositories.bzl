@@ -190,6 +190,7 @@ def envoy_dependencies(skip_targets = []):
     _com_github_wamr()
     _com_github_wavm_wavm()
     _com_github_wasmtime()
+    _com_github_wasmer()
     _com_github_wasm_c_api()
 
     switched_rules_by_language(
@@ -966,6 +967,12 @@ def _com_github_wasmtime():
         build_file = "@envoy//bazel/external:wasmtime.BUILD",
     )
 
+def _com_github_wasmer():
+    external_http_archive(
+        name = "com_github_wasmer",
+        build_file = "@envoy//bazel/external:wasmer.BUILD",
+    )
+
 def _com_github_wasm_c_api():
     external_http_archive(
         name = "com_github_wasm_c_api",
@@ -974,6 +981,10 @@ def _com_github_wasm_c_api():
     native.bind(
         name = "wasmtime",
         actual = "@com_github_wasm_c_api//:wasmtime_lib",
+    )
+    native.bind(
+        name = "wasmer",
+        actual = "@com_github_wasm_c_api//:wasmer_lib",
     )
 
 def _rules_fuzzing():

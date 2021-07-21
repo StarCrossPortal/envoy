@@ -251,6 +251,7 @@ EXTENSIONS = {
     "envoy.wasm.runtime.wamr":                          "//source/extensions/wasm_runtime/wamr:config",
     "envoy.wasm.runtime.wavm":                          "//source/extensions/wasm_runtime/wavm:config",
     "envoy.wasm.runtime.wasmtime":                      "//source/extensions/wasm_runtime/wasmtime:config",
+    "envoy.wasm.runtime.wasmer":                        "//source/extensions/wasm_runtime/wasmer:config",
 
     #
     # Rate limit descriptors

@@ -1249,6 +1249,7 @@ vptr
 wakeup
 wakeups
 wamr
+wasmer
 wasmtime
 websocket
 wepoll
